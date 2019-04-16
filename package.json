@@ -1,0 +1,36 @@
+{
+  "name": "sail-plan-api",
+  "description": "The RESTful API for Sail Plan.",
+  "version": "0.0.1",
+  "author": "Darryl Patterson <widgetapps@gmail.com>",
+  "license": "LicenseRef-LICENSE",
+  "main": "server.js",
+  "engines": {
+    "node": "10.13.x",
+    "npm": "6.4.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/patpow/sail-plan-api.git"
+  },
+  "dependencies": {
+    "acl": "^0.4.11",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "glob": "^7.1.3",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "method-override": "^3.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.5.1",
+    "rand-token": "^0.4.0"
+  },
+  "devDependencies": {}
+}
