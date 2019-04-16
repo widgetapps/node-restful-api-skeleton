@@ -1,2 +1,2 @@
-# sail-plan-api
+# node-restful-api-scaffold
 
