@@ -4,5 +4,5 @@ module.exports = {
     app: {
         title: 'node-restful-api-scaffold - Development Environment'
     },
-    db: 'mongodb://localhost/database-dev'
+    db: 'mongodb://localhost/restful-api-dev'
 };

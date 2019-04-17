@@ -38,7 +38,8 @@ User.deleteMany({}, function (err) {
             lastName: 'Admin',
             email: 'admin@example.com',
             password: '12345678',
-            role: 'super'
+            role: 'super',
+            active: true
         });
 
         user.save(function (err, savedUser) {
