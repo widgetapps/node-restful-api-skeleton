@@ -3,7 +3,7 @@
 Yes, another bunch of NodeJS that helps you create a RESTful API. I was working on a new
 project that needed strong authentication and authorization. As I worked my way through the code,
 it looked like what I had just might be useful to others. I put that work on hold to take some
-time to document what built and commit the code here on GitHub for anyone to use.
+time to document what I built and to commit the code here on GitHub for anyone to use.
 
 ## Getting Started
 
@@ -57,7 +57,7 @@ Response:
    "publicKey": "{Public key used to verify the JWT signature}",
    "refreshToken": "{The refresh token that can be used to request a new JWT access token}"
 ```
-
+---
 **POST /auth/token{refreshToken}**
 
 Use this endpoint to request a new access token without the need to reauthenticate.
@@ -88,7 +88,7 @@ Response:
     "publicKey": "{Public key used to verify the JWT signature}"
 }
 ```
-
+---
 **GET /auth/validate**
 
 Used to validate that the authentcation headers are good.
@@ -156,7 +156,7 @@ Response:
     }
 ]
 ```
-
+---
 **POST /users**
 
 Used to add a new user to the system.
@@ -201,7 +201,7 @@ Response:
     "__v": 0
 }
 ```
-
+---
 **GET /users/{userId}**
 
 Returns a single user document. A user with the `user` role can only view their own document.
@@ -230,7 +230,7 @@ Response:
     "updated": "2019-04-16T20:15:39.511Z"
 }
 ```
-
+---
 **PATCH /users/{userId}**
 
 Used to update select fields in the user document. Can update any number of fields in any order.
@@ -269,7 +269,7 @@ Response:
     "__v": 0
 }
 ```
-
+---
 **DELETE /users/{userId}**
 
 Used to delete a user. Only users with the `super` role can delete users and a user cannot delete
@@ -322,7 +322,7 @@ Response:
     }
 ]
 ```
-
+---
 **GET /tokens/{refreshToken}**
 
 Used to get a single refresh token.
@@ -349,7 +349,7 @@ Response:
     "created": "2019-04-16T20:33:02.351Z"
 }
 ```
-
+---
 **DELETE /tokens/{refreshToken}**
 
 Used to delete a single refresh token.
