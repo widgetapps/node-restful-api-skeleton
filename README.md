@@ -21,11 +21,25 @@ This is fully functional, here are the steps to get the little scafford working.
 Then fire up your favourite RESTful URL (I use [Postman](https://www.getpostman.com/) but also
 including the cURL commands) tool to test.
 
-### Endpoints
+## Why This Might Be Useful
+
+If you're very comfy with NodeJS, ExpressJS & MongooseJS, you'll be able to jump right into this code -
+there really isn't anything else you need to know. This project gives you the following features:
+
+* Logical directory structure for config, routes, middleware, controllers, models and custom code (lib).
+* Config ready to development & production environments (can easily be extended for staging and beyond).
+* Authentication using JSON Web Tokens (JWT) signed with RSA key pairs.
+* Authorization using Access Control Lists (ACL).
+* Models to store Users & Refresh Tokens.
+* Routes & Controllers for required authentication, user management and token management.
+* A little tool to populate the first user in your MongoDB.
+
+---
+## Endpoints
 
 These are the endpoints that will work right out of the box.
 
-#### Authentication
+### Authentication
 
 **POST /auth/login**
 
@@ -109,7 +123,7 @@ Response:
 }
 ```
 
-#### Required HTTP Headers for Authenticated Requests
+### Required HTTP Headers for Authenticated Requests
 
 When you login and get your JWT or you refresh to get an updated JWT, you will get back the JWT 
 that you must include in all authenticated API requests. The JWT also contains the user _id that
@@ -125,7 +139,7 @@ x-access-token: {JWT}
 x-user-id: {user _id}
 ```
 
-#### Users
+### Users
 
 **GET /users**
 
@@ -293,7 +307,7 @@ Response:
 }
 ```
 
-#### Tokens
+### Tokens
 
 **GET /tokens**
 
@@ -371,9 +385,3 @@ Response:
     "message": "The token has been removed."
 }
 ```
-
-## How it all works
-
-I'll be posting more information on the details soon enough. The documented endpoints will certainly
-get you started. The JWT/refresh token is somewhat complex, but provides great security and control.
-There are a couple things I'd like to improve on, and I'm always open to suggestions.
