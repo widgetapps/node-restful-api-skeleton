@@ -5,7 +5,7 @@ project that needed strong authentication and authorization. As I worked my way 
 it looked like what I had just might be useful to others. I put that work on hold to take some
 time to document what built and commit the code here on GitHub for anyone to use.
 
-##Getting Started
+## Getting Started
 
 This is fully functional, here are the steps to get the little scafford working.
 
@@ -109,7 +109,7 @@ Response:
 }
 ```
 
-####Required HTTP Headers for Authenticated Requests
+#### Required HTTP Headers for Authenticated Requests
 
 When you login and get your JWT or you refresh to get an updated JWT, you will get back the JWT 
 that you must include in all authenticated API requests. The JWT also contains the user _id that
@@ -125,7 +125,7 @@ x-access-token: {JWT}
 x-user-id: {user _id}
 ```
 
-####Users
+#### Users
 
 **GET /users**
 
@@ -293,7 +293,7 @@ Response:
 }
 ```
 
-####Tokens
+#### Tokens
 
 **GET /tokens**
 
@@ -372,7 +372,7 @@ Response:
 }
 ```
 
-##How it all works
+## How it all works
 
 I'll be posting more information on the details soon enough. The documented endpoints will certainly
 get you started. The JWT/refresh token is somewhat complex, but provides great security and control.
