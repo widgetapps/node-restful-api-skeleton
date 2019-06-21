@@ -1,4 +1,4 @@
-# node-restful-api-scaffold
+# node-restful-api-skeleton
 
 Yes, another bunch of NodeJS that helps you create a RESTful API. I was working on a new
 project that needed strong authentication and authorization. As I worked my way through the code,
