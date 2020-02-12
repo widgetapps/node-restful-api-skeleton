@@ -13,13 +13,14 @@ This is fully functional, here are the steps to get the little scafford working.
 2. Clone the repo.
 3. `cd` into the cloned directory.
 4. Run `npm install`
-5. `cd tools` to run the DB reset script.
-6. Run `node reset-db.js` - this will create the first user.
-7. `cd ..` to get back into the project root.
-8. Run `node server.js`
+5. Update `development.js` and/or `production.js` files(s) in the `config/env` directory with your MongoDB connection string.
+6. `cd tools` to run the DB reset script.
+7. Run `node reset-db.js` - this will create the first user.
+8. `cd ..` to get back into the project root.
+9. Run `node server.js`
 
-Then fire up your favourite RESTful URL (I use [Postman](https://www.getpostman.com/) but also
-including the cURL commands) tool to test.
+Then fire up your favourite RESTful URL tool (I use [Postman](https://www.getpostman.com/) but also
+including the cURL commands) to test.
 
 ## Why This Might Be Useful
 
@@ -33,6 +34,11 @@ there really isn't anything else you need to know. This project gives you the fo
 * Models to store Users & Refresh Tokens.
 * Routes & Controllers for required authentication, user management and token management.
 * A little tool to populate the first user in your MongoDB.
+
+---
+### ACL Setup
+
+More to come on how the access control list works.
 
 ---
 ## Endpoints
