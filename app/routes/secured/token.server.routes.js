@@ -1,6 +1,6 @@
 'use strict';
 
-const acl = require('../../../../node_express_acl');
+const acl = require('node_express_acl');
 
 try {
     acl.addResource('/tokens',[

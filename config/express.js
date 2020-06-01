@@ -11,7 +11,7 @@ let express = require('express'),
 	cors = require('cors'),
 	config = require('./config'),
 	path = require('path'),
-    acl = require('../../node_express_acl');
+    acl = require('node_express_acl');
 
 acl.setRoles(['user', 'admin', 'super']);
 
