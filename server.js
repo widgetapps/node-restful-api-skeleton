@@ -12,12 +12,6 @@ mongoose.Promise = global.Promise;
  * Please note that the order of loading is important.
  */
 
-const dbOptions = {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false
-};
-
 const conn = mongoose.connection;
 conn.on('connecting', function() {
     console.log('Connecting to MongoDB...');
@@ -38,10 +32,10 @@ conn.on('reconnected', function () {
 conn.on('disconnected', function() {
     console.log('Disconnected from MongoDB.');
     console.log('DB URI is: ' + config.db);
-    mongoose.connect(config.db, dbOptions);
+    mongoose.connect(config.db, config.dbOptions);
 });
 
-const db = mongoose.connect(config.db, dbOptions);
+const db = mongoose.connect(config.db, config.dbOptions);
 
 // Init the express application
 const app = require('./config/express')(db);

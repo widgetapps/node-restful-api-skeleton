@@ -1,6 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose'),
+    config = require('../../config/config'),
     jwt = require('jsonwebtoken') ,
     randtoken = require('rand-token'),
     moment = require('moment'),
@@ -8,9 +9,9 @@ const mongoose = require('mongoose'),
     Token = require('../models/token.model'),
     crypto = require('crypto');
 
-const JWT_EXPIRY = 10000,
-    TOKEN_EXPIRY_DAYS = 7,
-    PKI_EXPIRY_DAYS = 30;
+const JWT_EXPIRY = config.jwt.expirySeconds,
+    TOKEN_EXPIRY_DAYS = config.jwt.tokenExpiryDays,
+    PKI_EXPIRY_DAYS = config.jwt.pkiExpiryDays;
 
 exports.login = function (req, res) {
 
