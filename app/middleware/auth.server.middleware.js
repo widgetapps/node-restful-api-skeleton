@@ -13,7 +13,7 @@ module.exports = function (req, res, next) {
         User.findById(userId).exec(function (err, user) {
             if (!user || err) {
                 res.status(401).send({
-                    message: 'Database getting the user supplied in x-user-id.'
+                    message: 'Database error getting the userId supplied in x-user-id.'
                 });
                 return;
             }

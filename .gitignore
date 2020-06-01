@@ -6,4 +6,3 @@ node_modules/
 public/lib
 app/tests/coverage/
 .idea/
-package-lock.json

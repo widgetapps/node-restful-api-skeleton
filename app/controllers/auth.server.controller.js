@@ -8,7 +8,7 @@ const mongoose = require('mongoose'),
     Token = require('../models/token.model'),
     crypto = require('crypto');
 
-const JWT_EXPIRY = 900,
+const JWT_EXPIRY = 10000,
     TOKEN_EXPIRY_DAYS = 7,
     PKI_EXPIRY_DAYS = 30;
 

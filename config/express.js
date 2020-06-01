@@ -10,7 +10,10 @@ let express = require('express'),
 	helmet = require('helmet'),
 	cors = require('cors'),
 	config = require('./config'),
-	path = require('path');
+	path = require('path'),
+    acl = require('../../node_express_acl');
+
+acl.setRoles(['user', 'admin', 'super']);
 
 module.exports = function(db) {
 		// Initialize express app

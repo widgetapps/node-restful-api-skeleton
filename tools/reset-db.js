@@ -43,7 +43,8 @@ User.deleteMany({}, function (err) {
         });
 
         user.save(function (err, savedUser) {
-            console.log('Database has been cleared. Default user has been added.');
+            console.log('Database has been cleared. Default user has been added. _id: ' + savedUser._id);
+            process.exit(0);
         });
     });
 });

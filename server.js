@@ -53,4 +53,4 @@ app.listen(config.port, config.ip);
 exports = module.exports = app;
 
 // Logging initialization
-console.log('Sail Plan API started on port ' + config.port + ' with IP ' + config.ip);
+console.log('API started on port ' + config.port + ' with IP ' + config.ip);

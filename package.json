@@ -1,6 +1,6 @@
 {
-  "name": "sail-plan-api",
-  "description": "The RESTful API for Sail Plan.",
+  "name": "node-restful-api-skeleton",
+  "description": "The RESTful API skeleton.",
   "version": "0.0.1",
   "author": "Darryl Patterson <widgetapps@gmail.com>",
   "license": "LicenseRef-LICENSE",
@@ -14,10 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/patpow/sail-plan-api.git"
+    "url": "https://github.com/widgetapps/node-restful-api-skeleton.git"
   },
   "dependencies": {
-    "acl": "^0.4.11",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "compression": "^1.7.4",
