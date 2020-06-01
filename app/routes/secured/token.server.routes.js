@@ -10,7 +10,7 @@ try {
         {'role': 'super', 'methods': ['GET', 'DELETE']}
     ]);
 } catch (err) {
-    console.log('Error adding ACL resource.');
+    console.log('Error adding ACL resource: ' + err);
 }
 
 module.exports = function(app) {

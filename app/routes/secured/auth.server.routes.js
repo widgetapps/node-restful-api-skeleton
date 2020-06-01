@@ -9,7 +9,7 @@ try {
         {'role': 'user', 'methods': ['GET']}
     ]);
 } catch (err) {
-    console.log('Error adding ACL resource.');
+    console.log('Error adding ACL resource: ' + err);
 }
 
 module.exports = function(app) {

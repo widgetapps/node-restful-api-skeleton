@@ -2,7 +2,10 @@
   "name": "node-restful-api-skeleton",
   "description": "The RESTful API skeleton.",
   "version": "0.0.1",
-  "author": "Darryl Patterson <widgetapps@gmail.com>",
+  "author": {
+    "name": "Darryl Patterson",
+    "email": "widgetapps@gmail.com"
+  },
   "license": "LicenseRef-LICENSE",
   "main": "server.js",
   "engines": {
