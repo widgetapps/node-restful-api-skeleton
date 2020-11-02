@@ -7,22 +7,24 @@ module.exports = function (req, res, next) {
     const User = require('../models/user.model');
 
     let token = req.headers['x-access-token'];
-    let userId = req.headers['x-user-id'];
 
-    if (token && userId) {
+    if (token) {
+
+        let decodedUser = jwt.decode(token);
+
+        if (decodedUser === null) {
+            res.status(401).send({
+                message: 'The supplied access token is corrupt.'
+            });
+            return;
+        }
+
+        let userId = decodedUser._id;
+
         User.findById(userId).exec(function (err, user) {
             if (!user || err) {
                 res.status(401).send({
                     message: 'Database error getting the userId supplied in x-user-id.'
-                });
-                return;
-            }
-
-            let decodedUser = jwt.decode(token);
-
-            if (decodedUser === null) {
-                res.status(401).send({
-                    message: 'The supplied access token is corrupt.'
                 });
                 return;
             }

@@ -111,15 +111,14 @@ Response:
 ---
 **GET /auth/validate**
 
-Used to validate that the authentcation headers are good.
+Used to validate that the JWT header is good.
 
 cURL:
 ```
 curl -X GET \
   http://localhost:3101/auth/validate \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}'
+  -H 'x-access-token: {JWT}'
 ```
 
 Response:
@@ -132,17 +131,15 @@ Response:
 ### Required HTTP Headers for Authenticated Requests
 
 When you login and get your JWT or you refresh to get an updated JWT, you will get back the JWT 
-that you must include in all authenticated API requests. The JWT also contains the user _id that
-you will also need to include in the HTTP request headers. If you need to easily decode your JWT,
+that you must include in all authenticated API requests. If you need to easily decode your JWT,
 you can use [jwt.io](https://jwt.io/). Simply copy the JWT from the response and paste there. It
-will decode the JWT content, showing you the complete user record including the `_id` field.
+will decode the JWT content, showing you the complete user record.
 
-Here are the two headers that you must include to make requests to authenticated endpoints (the
+The following header must be included with requests to authenticated endpoints (the
 validate endpoint above is authenticated, look at the cURL command).
 
 ```
 x-access-token: {JWT}
-x-user-id: {user _id}
 ```
 
 ### Users
@@ -157,8 +154,7 @@ cURL:
 curl -X GET \
   http://localhost:3101/users \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}'
+  -H 'x-access-token: {JWT}'
 ```
 
 Response:
@@ -187,8 +183,7 @@ curl -X POST \
   http://localhost:3101/users \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}' \
+  -H 'x-access-token: {JWT}'
   -d '{
 	"firstName": "Test",
 	"lastName": "User",
@@ -217,8 +212,7 @@ Response:
     "email": "test@example.com",
     "role": "user",
     "created": "2019-04-16T20:15:39.506Z",
-    "updated": "2019-04-16T20:15:39.511Z",
-    "__v": 0
+    "updated": "2019-04-16T20:15:39.511Z"
 }
 ```
 ---
@@ -232,8 +226,7 @@ curl -X GET \
   http://localhost:3101/users/5cb637eb3cbe9f032c211bd3 \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}' \
+  -H 'x-access-token: {JWT}'
   -d '{}'
 ```
 
@@ -261,8 +254,7 @@ curl -X PATCH \
   http://localhost:3101/users/5cb637eb3cbe9f032c211bd3 \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}' \
+  -H 'x-access-token: {JWT}'
   -d '{
 	"firstName": "Test"
 }'
@@ -285,8 +277,7 @@ Response:
     "email": "test@example.com",
     "role": "user",
     "created": "2019-04-16T20:15:39.506Z",
-    "updated": "2019-04-16T20:19:14.715Z",
-    "__v": 0
+    "updated": "2019-04-16T20:19:14.715Z"
 }
 ```
 ---
@@ -301,8 +292,7 @@ curl -X DELETE \
   http://localhost:3101/users/5cb5de628364fe00f7151574 \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}' \
+  -H 'x-access-token: {JWT}'
   -d '{}'
 ```
 
@@ -324,8 +314,7 @@ cURL:
 curl -X GET \
   http://localhost:3101/tokens \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}'
+  -H 'x-access-token: {JWT}'
 ```
 
 Response:
@@ -337,8 +326,7 @@ Response:
         "expiry": "2019-04-23T20:59:41.000Z",
         "user": "5cb6422d37356b03922f5235",
         "created": "2019-04-16T20:59:41.493Z",
-        "updated": "2019-04-16T20:59:41.497Z",
-        "__v": 0
+        "updated": "2019-04-16T20:59:41.497Z"
     }
 ]
 ```
@@ -353,8 +341,7 @@ curl -X GET \
   http://localhost:3101/tokens/5cb5e3acf3b33f0141a50891 \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}' \
+  -H 'x-access-token: {JWT}',
   -d '{}'
 ```
 
@@ -365,7 +352,6 @@ Response:
     "token": "{refreshToken}",
     "expiry": "2019-04-23T14:16:12.000Z",
     "user": "5cb5de628364fe00f7151574",
-    "__v": 0,
     "created": "2019-04-16T20:33:02.351Z"
 }
 ```
@@ -380,8 +366,7 @@ curl -X DELETE \
   http://localhost:3101/tokens/5cb5e3acf3b33f0141a50891 \
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache' \
-  -H 'x-access-token: {JWT}' \
-  -H 'x-user-id: {user _id}' \
+  -H 'x-access-token: {JWT}'
   -d '{}'
 ```
 
